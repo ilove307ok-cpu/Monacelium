@@ -1,0 +1,32 @@
+# Build artifacts
+target/
+build/
+dist/
+*.o
+*.a
+*.so
+*.dylib
+
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.env
+
+# Node
+node_modules/
+*.lock
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Hardware
+*.gbr
+gerbers/
+*.bak
+
+# OS
+.DS_Store
+Thumbs.db
