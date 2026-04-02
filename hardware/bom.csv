@@ -1,0 +1,48 @@
+Category,Component,Part Number,Manufacturer,Supplier,Unit Cost (USD),MOQ,Lead Time (Days),Quantity,Extended Cost (USD),Notes
+MCU,ESP32-S3 Module,ESP32-S3-WROOM-1-N8R8,Espressif,Digi-Key,4.50,1,14,1,4.50,8MB PSRAM + 8MB Flash
+SBC,Raspberry Pi 5,SC1112,Raspberry Pi Foundation,Approved Reseller,80.00,1,30,1,80.00,8GB RAM variant
+Sensor,PPG Heart Rate Sensor,MAX30102,Maxim Integrated,Mouser,3.20,1,7,1,3.20,I2C interface
+Sensor,MEMS Digital Microphone,INMP441,TDK InvenSense,Digi-Key,1.00,1,7,2,2.00,Dual mic array for beamforming
+Communication,LoRa Module,SX1262,Semtech,Waveshare (HAT),12.00,1,21,1,12.00,915MHz ISM band (US)
+Security,Crypto Auth IC,ATECC608A-MAHDA-T,Microchip,Microchip Direct,2.00,1,10,1,2.00,Hardware secure element
+Power,5V 3A Power Supply,TSP-050300-USB,TRENDnet,Amazon Business,8.50,1,3,1,8.50,USB-C PD compatible
+PCB,Custom Atman PCB,ATMAN-V1-PCB-R1,Custom Design,JLCPCB,15.00,5,10,1,15.00,4-layer FR4 board
+Enclosure,ABS Plastic Case,Custom Injection Mold,TBD,Shenzhen Supplier,12.00,100,45,1,12.00,Matte black finish
+Passive,Resistors/Capacitors/LEDs,Various,Various,LCSC,2.00,1,7,1,2.00,BOM kit bundle
+Assembly,PCB Assembly (PCBA),N/A,Contract Manufacturer,Shenzhen PCBA House,18.00,10,14,1,18.00,SMT + THT components
+Testing,Functional Test & QC,N/A,In-house,N/A,5.00,1,1,1,5.00,Firmware flash + sensor calibration
+Packaging,Retail Box + Manual,Custom Print,Packaging Supplier,Local Print Shop,3.50,50,7,1,3.50,Recycled cardboard
+
+Total BOM Cost,,,,,,,,,$167.70,Per unit cost at MOQ 100
+Target Selling Price,,,,,,,,,$99.00,Direct-to-consumer pricing
+Gross Margin,,,,,,,,,"-$68.70","Negative at small scale, requires volume pricing"
+
+Volume Pricing Tiers,,,,,,,,,
+Quantity,ESP32-S3,Raspberry Pi 5,Total BOM,Gross Margin,Margin %,,,
+10,"$4.50","$80.00","$167.70","-$68.70","-69%",,,
+100,"$4.20","$75.00","$155.40","-$56.40","-57%",,,
+1000,"$3.80","$68.00","$132.50","$33.50","25%",,,
+10000,"$3.50","$60.00","$108.20","$9.20","8%",,,
+
+Critical Supply Chain Notes,,,,,,,,,
+Component,Risk Level,Mitigation Strategy,,,,,,
+Raspberry Pi 5,HIGH,Dual-source: RPi 5 (primary) + Orange Pi 5 Plus (fallback),,,,,,
+SX1262 LoRa,MEDIUM,Pre-order 6-month buffer stock; alternative: RFM95W,,,,,,
+ATECC608A,LOW,Standard Microchip part with stable supply,,,,,,
+Custom PCB,MEDIUM,Maintain 2 PCBA vendors (Shenzhen + Taiwan),,,,,,
+Injection Mold,HIGH,Requires $15k upfront tooling cost; use 3D print for <100 units,,,,,,
+
+Compliance & Certifications,,,,,,,,,
+Certification,Region,Estimated Cost (USD),Lead Time (Weeks),Status,,,,
+FCC Part 15 (Radio),USA,5000,8,Pending,,,,
+CE (RED),EU,3500,6,Pending,,,,
+NCC (射頻認證),Taiwan,2000,4,Pending,,,,
+RoHS,Global,500,2,Design compliant,,,,
+Total Certification Cost,,,"$11,000",,,,,
+
+Recommended Initial Production Run,,,,,,,,,
+Phase,Quantity,Purpose,Total Cost (USD),Risk Level,,,,
+EVT (Engineering Verification),10,Hardware validation + firmware testing,"$1,677",LOW,,,,
+DVT (Design Verification),50,Pilot production + user testing,"$7,770",MEDIUM,,,,
+PVT (Production Verification),100,Mass production readiness,"$15,540",MEDIUM,,,,
+MP (Mass Production),1000,First commercial batch,"$132,500",HIGH (requires funding),,,,
